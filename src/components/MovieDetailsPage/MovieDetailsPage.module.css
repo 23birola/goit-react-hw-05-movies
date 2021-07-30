@@ -1,0 +1,33 @@
+.backBtn {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid rgba(212, 208, 208, 0.568);
+  border-radius: 4px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.backBtn svg {
+  margin-right: 5px;
+}
+
+.movieInfo {
+  display: flex;
+}
+
+.movieInfoImg {
+  width: 350px;
+  height: 100%;
+  margin: 10px;
+}
+
+.genres {
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+}
+
+.genres li:not(last-child) {
+  margin-right: 5px;
+}

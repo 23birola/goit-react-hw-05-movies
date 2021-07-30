@@ -1,0 +1,15 @@
+nav {
+  padding: 15px;
+}
+
+.link {
+  font-weight: 700;
+}
+
+.link:not(:last-child) {
+  margin-right: 10px;
+}
+
+.activeLink {
+  color: tomato;
+}

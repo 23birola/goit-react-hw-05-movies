@@ -1,21 +1,19 @@
 import { useState, useEffect } from 'react';
-import { useParams} from 'react-router-dom';
 import { fetchMovieReviews } from '../../services/movies-api';
+import css from './Reviews.module.css'
 
-export default function Reviews() {
-    const [reviews, setReviews] = useState(null);
-
-    const { movieId } = useParams();
+export default function Reviews({movieId}) {
+    const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
         fetchMovieReviews(movieId).then(setReviews)
     }, [movieId]);
     return (
         <>
-            {!reviews ? <p>We don't have reviews for this movie</p> :
+            {(reviews.length <= 0) ? <p>We don't have reviews for this movie</p> :
              <ul>
                 {reviews.map(review => <li key={review.id}>
-                        <p>Author: {review.author}</p>
+                    <p className={css.author}>Author: {review.author}</p>
                         <p>{review.content}</p>
                     </li>)}
             </ul>

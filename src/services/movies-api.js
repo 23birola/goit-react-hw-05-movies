@@ -52,7 +52,6 @@ export async function fetchMovies(query) {
     const response = await axios.get(
       `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${query}`,
     );
-    console.log('fetch', response.data.results);
     return response.data.results;
   } catch {
     new Error('Not found');
