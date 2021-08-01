@@ -1,6 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import Navigation from './components/Navigation/Navigation';
 import LoaderSpinner from './components/Loader/Loader';
+import NotFoundView from './views/NotFoundView';
 import './App.css';
 // import HomePage from './components/HomePage/HomePage';
 // import MoviePage from './components/MoviePage/MoviePage';
@@ -39,6 +40,10 @@ function App() {
 
           <Route path="/movies/:movieId">
             <MovieDetailsPage />
+          </Route>
+
+          <Route>
+            <NotFoundView />
           </Route>
         </Switch>
       </Suspense>

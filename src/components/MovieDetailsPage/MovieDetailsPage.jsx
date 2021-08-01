@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { fetchMovieInfo } from '../../services/movies-api';
 import Cast from '../Cast/Cast';
 import Reviews from '../Reviews/Reviews';
+import defaultImage from '../../image/defaultImg.png'
 import css from './MovieDetailsPage.module.css'
 
 
@@ -41,7 +42,7 @@ export default function MovieDetailsPage() {
             </button>
         {(movie) && <>
           <div className={css.movieInfo}>
-            <img src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt={movie.title} className={css.movieInfoImg}/>
+            <img src={movie.backdrop_path ? `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}` : defaultImage} alt={movie.title} className={css.movieInfoImg}/>
           <div>
                 <h2>{movie.title} ({movie.release_date.substring(0, 4)})</h2>
                 <p>User Score {movie.vote_average}</p>
