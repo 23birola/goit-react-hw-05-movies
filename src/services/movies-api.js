@@ -1,4 +1,5 @@
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = '110a8a7647f7de9c0b3bf03e930472b8';
@@ -10,7 +11,7 @@ export async function fetchTrendingMovies() {
     );
     return response.data.results;
   } catch {
-    new Error('Not found');
+    toast.error('Something went wrong');
   }
 }
 
@@ -21,7 +22,7 @@ export async function fetchMovieInfo(id) {
     );
     return response.data;
   } catch {
-    new Error('Not found');
+    toast.error('Something went wrong');
   }
 }
 
@@ -32,7 +33,7 @@ export async function fetchMovieCast(id) {
     );
     return response.data.cast;
   } catch {
-    new Error('Not found');
+    toast.error('Something went wrong');
   }
 }
 
@@ -43,7 +44,7 @@ export async function fetchMovieReviews(id) {
     );
     return response.data.results;
   } catch {
-    new Error('Not found');
+    toast.error('Something went wrong');
   }
 }
 
@@ -54,6 +55,6 @@ export async function fetchMovies(query) {
     );
     return response.data.results;
   } catch {
-    new Error('Not found');
+    toast.error('Something went wrong');
   }
 }

@@ -35,7 +35,7 @@ function App() {
 
           <Route path="/movies" exact>
             <MoviePage />
-            <Toaster />
+            {/* <Toaster /> */}
           </Route>
 
           <Route path="/movies/:movieId">
@@ -47,6 +47,7 @@ function App() {
           </Route>
         </Switch>
       </Suspense>
+      <Toaster />
     </div>
   );
 }

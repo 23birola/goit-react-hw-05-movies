@@ -1,7 +1,7 @@
 import { Link, useRouteMatch, useHistory, useLocation} from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { fetchMovies } from '../../services/movies-api';
-import toast, {Toaster} from "react-hot-toast";
+import toast from "react-hot-toast";
 
 
 export default function MoviePage() {
@@ -15,7 +15,7 @@ export default function MoviePage() {
   const handleSubmit = (e) => {
   e.preventDefault();
   const queryInput = e.target.elements.query.value.toLowerCase();
-    if (!queryInput.trim()) {
+  if (!queryInput.trim()) {
     toast.error("Enter query");
       return;
   }
@@ -33,12 +33,13 @@ export default function MoviePage() {
     fetchMovies(query).then(setMovies);
   }, [query]);
 
+
+
   return (
     <>
       <form onSubmit={handleSubmit}>
         <input name="query"/>
         <button type="submit">Search</button>
-        <Toaster />
       </form>
       {
         movies && <ul>
