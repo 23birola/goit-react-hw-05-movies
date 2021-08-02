@@ -26,11 +26,10 @@ export default function MovieDetailsPage() {
     }, [movieId]);
 
     const handleGoBack = () => {
-        const url = routerState.current ? `/?${routerState.current?.params}` : '/movies'
-        history.push(url) 
+        const url = routerState.current ? `/movies?${routerState.current?.params}` : '/movies'
+        history.push(url);
     }
     
-
     return (
         <>
             <button type="button" className={css.backBtn}
